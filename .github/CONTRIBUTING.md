@@ -24,4 +24,4 @@ This is a simple package, so I'll keep the guidelines simple and straightforward
 - Make sure all tests pass.
 - Submit a pull request, referencing any issues it addresses.
 
-[issue tracker url]: https://github.com/webmasterish/vuepress-plugin-feed/issues
+[issue tracker url]: https://github.com/ame-yu/vuepress-next-plugin-feed/issues

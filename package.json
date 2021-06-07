@@ -1,59 +1,57 @@
 {
-  "name": "vuepress-plugin-feed",
-  "version": "0.1.9",
-  "description": "RSS, Atom, and JSON feeds generator plugin for VuePress 1.x",
-  "main": "index.js",
-  "scripts": {
-    "version": "git add --all",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webmasterish/vuepress-plugin-feed.git"
-  },
-  "keywords": [
-    "vue",
-    "vuepress",
-    "plugin",
-    "vuepress-plugin",
-    "blog",
-    "feed",
-    "xml",
-    "rss",
-    "atom",
-    "json",
-    "json-feed",
-    "syndication"
-  ],
-  "author": {
-    "name": "webmasterish",
-    "email": "webmasterish@gmail.com",
-    "url": "https://webmasterish.com"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/webmasterish/vuepress-plugin-feed",
-  "bugs": {
-    "url": "https://github.com/webmasterish/vuepress-plugin-feed/issues"
-  },
-  "engines": {
-    "node": ">=8"
-  },
-  "dependencies": {
-    "feed": "2.0.4",
-    "lodash.defaultsdeep": "4.6.1",
-    "lodash.isempty": "4.4.0",
-    "lodash.trimend": "^4.5.1",
-    "lodash.trimstart": "^4.5.1",
-    "remove-markdown": "0.3.0",
-    "striptags": "3.1.1"
-  },
-  "peerDependencies": {
-    "vuepress": "1.x"
-  },
-  "files": [
-    "lib",
-    "index.js",
-    "README.md",
-    "LICENSE"
-  ]
+    "name": "vuepress-next-plugin-feed",
+    "version": "0.1.0",
+    "description": "RSS, Atom, and JSON feeds generator plugin for VuePress 2.x",
+    "scripts": {
+        "dev": "tsc -p . -w --incremental",
+        "build:test": "tsc --build",
+        "build": "rimraf dist && run-s build:bundle build:types",
+        "build:bundle": "esbuild src/index.ts --bundle --platform=node --target=node14 --outfile=dist/index.js",
+        "build:types": "tsc -p . --emitDeclarationOnly --outDir temp && api-extractor run && rimraf temp"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ame-yu/vuepress-next-plugin-feed.git"
+    },
+    "author": {
+        "name": "ame-yu",
+        "email": "lueu@live.com"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/ame-yu/vuepress-next-plugin-feed",
+    "bugs": {
+        "url": "https://github.com/ame-yu/vuepress-next-plugin-feed/issues"
+    },
+    "dependencies": {
+        "feed": "4.2.2",
+        "lodash": "4.17.21",
+        "remove-markdown": "0.3.0",
+        "striptags": "3.1.1"
+    },
+    "devDependencies": {
+        "@microsoft/api-extractor": "^7.12.1",
+        "@types/lodash": "^4.14.170",
+        "@types/remove-markdown": "^0.3.0",
+        "esbuild": "^0.12.5",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.2",
+        "vuepress": "^2.0.0-beta.17"
+    },
+    "peerDependencies": {
+        "vuepress": "2.x"
+    },
+    "contributors": [
+        {
+            "name": "webmasterish",
+            "email": "webmasterish@gmail.com",
+            "url": "https://webmasterish.com"
+        }
+    ]
 }
